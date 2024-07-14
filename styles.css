@@ -1,0 +1,366 @@
+/* ----------------------------------------Navigation Bar------------------------------------------------------------------------ */
+body, h1, h2, h3, p, img, nav, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.topnav .logo {
+    height: 80px;
+    width: 100px;
+}
+
+
+.topnav .tagline {
+    font-size: 27px;
+    color: #9C6A07;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+
+.nav-links a {
+    color: #C68507;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#logBtn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 0px solid #B2700C; 
+}
+
+
+.nav-links a:hover {
+    color: black;
+    background-color: #f0f0f0;
+}
+
+.nav-links a.active {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* ---------------------------------------------   Banner Side   ---------------------------------------------------------------------- */
+
+/* Banner container */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;  
+    padding-bottom: 40px;
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-bottom: 20px;
+}
+
+/* Banner image */
+.banner-img {
+    width: 580px;
+    height: 580px;
+    object-fit: cover;
+    border-radius: 10px; 
+    border: 3px solid #838300; 
+    border-radius: 10px; 
+    
+}
+
+/* Banner text container */
+.bannertext {
+    color: #CF8B06;
+    text-align: left;
+    padding-left: 140px;
+    flex: 1;
+}
+
+/* Banner title */
+.bannertitle {
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: alias;
+    
+}
+
+/* Banner subtitle */
+.bannersub {
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-left: 80px;
+    cursor: alias;
+}
+
+/* Banner button */
+.bannerbtn {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #B2700C;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.bannerbtn:hover {
+    background-color: #944a0c;
+}
+
+/* -----------------------------------------------Hot Deals---------------------------------------------------------------------------- */
+.hotDeals{
+    background-color: #eae3a9;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.hotDealsTitle{
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #724d08;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 80px;
+}
+
+/* ----------------------------------------------Item Cards------------------------------------------ */
+.container {
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-bottom: 55px;
+    display: flex; /* Use flexbox to align items horizontally */
+    gap: 20px; /* Space between item cards */
+}
+
+.item-card {
+    border: 3px solid #7e723c; /* Border color to match your example */
+    border-radius: 8px; /* Optional: adding rounded corners */
+    padding: 15px; /* Optional: adding padding inside the border */
+    display: flex; /* Flex display to handle content within */
+    flex-direction: column; /* Ensure vertical stacking of content within card */
+    align-items: center; /* Center align items horizontally */
+    width: 300px; /* Adjust the width as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    margin-right: 10px;
+}
+
+.product-title {
+    margin: 15px 0; /* Margin to add spacing vertically */
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #9C6A07;
+    text-align: center; /* Center align the title text */
+}
+
+.product-price {
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center; /* Center align the price text */
+}
+
+.add-to-cart-btn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px; /* Added some margin-top for spacing */
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.25s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e69f35;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------Footer--------------------------------------------------------------------------- */
+.site-footer
+{
+    margin-top: 250px;
+  background-color:#f1950b;
+  padding:5px 0 2px;
+  font-size:15px;
+  line-height:25px;
+  color:#000000;
+}
+.site-footer hr
+{
+  border-top-color:#000000;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#000000;
+}
+.site-footer a:hover
+{
+  color:#ffffff;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#ffffff
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}

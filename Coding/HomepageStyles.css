@@ -1,0 +1,146 @@
+/* ----------------------------------------Navigation Bar------------------------------------------------------------------------ */
+body, h1, h2, h3, p, img, nav, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.topnav .logo {
+    height: 80px;
+    width: 100px;
+}
+
+
+.topnav .tagline {
+    font-size: 27px;
+    color: #9C6A07;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+
+.nav-links a {
+    color: #C68507;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+#logBtn {
+    background-color: #B2700C;
+    color: #ffffff;
+    border-radius: 10px;
+    border: 0px solid #B2700C; 
+}
+
+
+.nav-links a:hover {
+    color: black;
+    background-color: #f0f0f0;
+}
+
+.nav-links a.active {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* ---------------------------------------------   Banner Side   ---------------------------------------------------------------------- */
+
+/* Banner container */
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 500px;
+    width: 100%; */
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #f8f8f8; /* Optional: background color for better visibility */
+    padding-bottom: 40px;
+}
+
+/* Banner image */
+.banner-img {
+    width: 580px;
+    height: 580px;
+    object-fit: cover;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Banner text container */
+.bannertext {
+    color: #CF8B06;
+    text-align: left;
+    padding-left: 180px;
+    flex: 1;
+}
+
+/* Banner title */
+.bannertitle {
+    font-size: 100px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    cursor: alias;
+    
+}
+
+/* Banner subtitle */
+.bannersub {
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-left: 80px;
+    cursor: alias;
+}
+
+/* Banner button */
+.bannerbtn {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #B2700C;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 180px;
+    margin-top: 20px;
+}
+
+.bannerbtn:hover {
+    background-color: #944a0c;
+}
+
+/* -----------------------------------------------Hot Deals---------------------------------------------------------------------------- */
+.hotDeals{
+    background-color: #eae3a9;
+}
+
+.hotDealsTitle{
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #724d08;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 80px;
+}
+
+
