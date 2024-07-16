@@ -16,7 +16,7 @@
             <a href="menupage.html">Menu</a>
             <a href="Branches.html">Branches</a>
             <a href="reports.html">Your Reports</a>
-            <a href="#login" id="logBtn">Log In</a>
+            <a href="#login" id="logBtn">Admin</a>
         </nav>
     </header>
    
@@ -32,6 +32,7 @@
                         <th>Unit Price</th>
                         <th>Quantity</th>
                         <th>Discount</th>
+                        <th>( - )</th>
                         
                     </tr>
                 </thead>
@@ -69,6 +70,79 @@
                     </div>
                   </div>
             </div>
+             
 
+        <div class="orderdetailsPage">
+        <h1 class="cusDetailsHead"><center>Order Details</center></h1>
+        <div class="mb-3 row">
+            <label for="SubTotal" class="col-sm-2 col-form-label">Sub Total</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-controll" id="SubTotal" readonly>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="Discount" class="col-sm-2 col-form-label">Discount</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-controll" id="Discount" readonly>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="Delivery" class="col-sm-2 col-form-label">Delivery</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-controll" id="Delivery" readonly>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="Total" class="col-sm-2 col-form-label">Total</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-controll" id="Total" readonly>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+        </div>
+
+    <div class="orderbtns">
+        <input type="button" class="placeOrder" value="Place Order">
+        <input type="button" class="back" value="Back to Menu" onclick="location.href='menupage.html'">
+    </div>
+            <!-- footer----------------------------------------------------------------------------------------------------- -->
+     <!-- Site footer -->
+      
+     <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">
+                "At MOS Burgers, we are passionate about crafting mouthwatering burgers with the freshest ingredients. From our signature juicy patties to our unique flavor combinations, every bite is a delicious experience. Join us for a meal that’s as unforgettable as it is satisfying."</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Contact Us</h6>
+              <ul class="footer-links">
+                <li>Call - 0662233412</li>
+                <li>Email - mosBurgs@email.com</li>
+                <li>Whatsapp - +94 712 345 678</li>
+                <li>Messenger - fb.mosBurgs</li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Follow Us On</h6>
+              <ul class="footer-links">
+                <li>Instagram - @mosBurgs</li>
+                <li>Facebook - mosBurgs</li>
+                <li>Threads - @mosBurgs</li>
+                <li>Twitter - @mosBurgs.shop</li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
         
+        <h8><center><b>Copyright &copy; 2024 All Rights Reserved. </b></center></h8>
+  </footer>
 </body>
