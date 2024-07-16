@@ -14,59 +14,37 @@
         <nav class="nav-links">
             <a  id="home" href="HomepageHtml.html">Home</a>
             <a href="menupage.html">Menu</a>
-            <a href="Branches.html" class="active">Branches</a>
-            <a href="reports.html">Your Reports</a>
+            <a href="Branches.html" >Branches</a>
+            <a href="reports.html" class="active">Your Reports</a>
             <a href="#login" id="logBtn">Log In</a>
         </nav>
     </header>
 
-    <div class="container">
-        <div class="item-card">
-            <img src="images/nugegoda.jpg" alt="Ultimate Double Cheese Burger" style="width:100%;">
-            
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/kandy1.jpg" alt="Another Burger" style="width:100%;" >
-            
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/kady2.2.jpg" alt="Another Burger" style="width:100%;" >
-           
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/mount.jpg" alt="Another Burger" style="width:100%" >
-            
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-    </div>
-    <div class="container">
-        <div class="item-card">
-            <img src="images/bambala.jpg" alt="Ultimate Double Cheese Burger" style="width:100%;">
-            
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/matale.jpg" alt="Another Burger" style="width:100%;" >
-           
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/mirihana.jpg"	 alt="Another Burger" style="width:100%;" >
-            
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
-        <div class="item-card">
-            <img src="images/pelwatta.jpg" alt="Another Burger" style="width:100%">
-        
-            <button class="add-to-cart-btn">Show in Map</button>
-        </div>
+    <div  class="searchBar">
+        <input type="text" placeholder="Enter Your NIC" id="searchBar">
+        <button type="submit" id="searchBtn">Search</button>
     </div>
 
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer NIC</th>
+                    <th>Customer Name</th>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                  
+                    <th>Total Orders</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows go here -->
+            </tbody>
+        </table>
+    </div>
 
-      <!-- footer----------------------------------------------------------------------------------------------------- -->
+    <!-- footer----------------------------------------------------------------------------------------------------- -->
      <!-- Site footer -->
       
      <footer class="site-footer">
