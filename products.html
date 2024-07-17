@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burgers-Admin</title>
+    <link rel="icon" type="image/png" href="logo-photoaidcom-cropped.jpg">
+    <link rel="stylesheet" href="HomepageStyles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header class="topnav">
+        <img src="Logo.jpg" alt="logo" class="logo">
+        <label class="tagline">" Savor every Savory Bite... "</label>
+        <nav class="nav-links">
+            <a href="adminpage.html" >Edit Menu</a>
+            <a href="customerReports.html">Customer Reports</a>
+            <a href="orderReports.html">Order Reports</a>
+            <a href="reports.html"  class="active">Products</a>
+            <a href="HomepageHtml.html" id="logBtn">Log Out</a>
+        </nav>
+    </header>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Unit Price</th>
+                        <th>Stocks</th>
+                    </tr>
+                    <tr>
+                        <td>IB001</td>
+                        <td>Double Cheese Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1250</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>IB002</td>
+                        <td>Paneer Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 900</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>IB003</td>
+                        <td>Classic Burger Regular</td>
+                        <td>Burger</td>
+                        <td>LKR 750</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>IB004</td>
+                        <td>Classic Burger Large</td>
+                        <td>Burger</td>
+                        <td>LKR 1200</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>IB005</td>
+                        <td>Shawarma Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1250</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>IB006</td>
+                        <td>Bacon Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1100</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>IB007</td>
+                        <td>Olive Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1400</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>IB008</td>
+                        <td>Vegan Cheese Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1300</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>IB009</td>
+                        <td>HamBurger Large</td>
+                        <td>Burger</td>
+                        <td>LKR 1450</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>IB010</td>
+                        <td>French Onion Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1200</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>IB011</td>
+                        <td>Turkey Burger</td>
+                        <td>Burger</td>
+                        <td>LKR 1300</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>IB012</td>
+                        <td>Chicken Burger (Small)</td>
+                        <td>Burger</td>
+                        <td>LKR 700</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>IS001</td>
+                        <td>Double Cheese n Chicken Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1500</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>IS002</td>
+                        <td>Chicken Submarine (Large)</td>
+                        <td>Submarine</td>
+                        <td>LKR 1300</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>IS003</td>
+                        <td>Grinder Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1300</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>IS004</td>
+                        <td>Cheese Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1450</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>IS005</td>
+                        <td>Special Horgie Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1850</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>IS006</td>
+                        <td>Spicy Italian Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1400</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>IS007</td>
+                        <td>Turkey and Swiss Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1900</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>IS008</td>
+                        <td>Tuna Submarine</td>
+                        <td>Submarine</td>
+                        <td>LKR 1300</td>
+                        <td>110</td>
+                    </tr>
+                    <tr>
+                        <td>IF001</td>
+                        <td>Steak Fries (Large)</td>
+                        <td>Fries</td>
+                        <td>LKR 800</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>IF002</td>
+                        <td>French Fries (Large)</td>
+                        <td>Fries</td>
+                        <td>LKR 700</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>IF003</td>
+                        <td>French Fries (Medium)</td>
+                        <td>Fries</td>
+                        <td>LKR 550</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>IF004</td>
+                        <td>Sweet Potato Fries (Large)</td>
+                        <td>Fries</td>
+                        <td>LKR 600</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>IP001</td>
+                        <td>Chicken n Cheese Pasta</td>
+                        <td>Pasta</td>
+                        <td>LKR 2100</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>IP002</td>
+                        <td>Ground Turkey Pasta Bake</td>
+                        <td>Pasta</td>
+                        <td>LKR 2300</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>IP003</td>
+                        <td>Tagliatelle Pasta</td>
+                        <td>Pasta</td>
+                        <td>LKR 2200</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>IP004</td>
+                        <td>Creamy Shrimp Pasta</td>
+                        <td>Pasta</td>
+                        <td>LKR 2200</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>IC001</td>
+                        <td>BBQ Chicken (Large)</td>
+                        <td>Chicken</td>
+                        <td>LKR 1200</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>IC002</td>
+                        <td>Fried Chicken (Large)</td>
+                        <td>Chicken</td>
+                        <td>LKR 1100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>IC003</td>
+                        <td>Hot Wings (Large)</td>
+                        <td>Chicken</td>
+                        <td>LKR 1200</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>IC004</td>
+                        <td>Devilled Chicken (Large)</td>
+                        <td>Chicken</td>
+                        <td>LKR 1000</td>
+                        <td>160</td>
+                    </tr>
+                    <tr>
+                        <td>IBI001</td>
+                        <td>Biriyani Regular</td>
+                        <td>Biriyani</td>
+                        <td>LKR 1300</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>IBI002</td>
+                        <td>Biriyani Large</td>
+                        <td>Biriyani</td>
+                        <td>LKR 1600</td>
+                        <td>140</td>
+                    </tr>
+                    <tr>
+                        <td>IBI003</td>
+                        <td>MOS Special Spicy Rice</td>
+                        <td>Biriyani</td>
+                        <td>LKR 1500</td>
+                        <td>130</td>
+                    </tr>
+                    <tr>
+                        <td>IBI004</td>
+                        <td>MOS Sawan</td>
+                        <td>Biriyani</td>
+                        <td>LKR 4000</td>
+                        <td>120</td>
+                    </tr>
+                    <tr>
+                        <td>IB001</td>
+                        <td>Coca Cola (300ml)</td>
+                        <td>Beverage</td>
+                        <td>LKR 100</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>IB002</td>
+                        <td>Pepsi (300ml)</td>
+                        <td>Beverage</td>
+                        <td>LKR 100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>IB003</td>
+                        <td>Sprite (300ml)</td>
+                        <td>Beverage</td>
+                        <td>LKR 100</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>IB004</td>
+                        <td>Mirinda (300ml)</td>
+                        <td>Beverage</td>
+                        <td>LKR 100</td>
+                        <td>180</td>
+                    </tr>
+                    <tr>
+                        <td>IC001</td>
+                        <td>Càppuccino</td>
+                        <td>Coffee</td>
+                        <td>LKR 600</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>IC002</td>
+                        <td>Caffè americano</td>
+                        <td>Coffee</td>
+                        <td>LKR 500</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <td>IC003</td>
+                        <td>Lattè</td>
+                        <td>Coffee</td>
+                        <td>LKR 700</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>IC004</td>
+                        <td>Esprèsso</td>
+                        <td>Coffee</td>
+                        <td>LKR 700</td>
+                        <td>40</td>
+                    </tr>
+            </thead>
+        </table>
+    </div>
+
+     <!-- footer----------------------------------------------------------------------------------------------------- -->
+     <!-- Site footer -->
+      
+     <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <h6>About</h6>
+              <p class="text-justify">
+                "At MOS Burgers, we are passionate about crafting mouthwatering burgers with the freshest ingredients. From our signature juicy patties to our unique flavor combinations, every bite is a delicious experience. Join us for a meal that’s as unforgettable as it is satisfying."</p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Contact Us</h6>
+              <ul class="footer-links">
+                <li>Call - 0662233412</li>
+                <li>Email - mosBurgs@email.com</li>
+                <li>Whatsapp - +94 712 345 678</li>
+                <li>Messenger - fb.mosBurgs</li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Follow Us On</h6>
+              <ul class="footer-links">
+                <li>Instagram - @mosBurgs</li>
+                <li>Facebook - mosBurgs</li>
+                <li>Threads - @mosBurgs</li>
+                <li>Twitter - @mosBurgs.shop</li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        
+        <h8><center><b>Copyright &copy; 2024 All Rights Reserved. </b></center></h8>
+  </footer>
+</body></html>
+                
