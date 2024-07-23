@@ -690,6 +690,17 @@ tr:hover {
 #categoryinAddNew{
   margin-top:15px;
 }
-
+.printbtn{
+  margin-top: 30px;
+  margin-left: 47%;
+  background-color: #efc108;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.25s ease;
+    width: 180px;
+}
 
 
