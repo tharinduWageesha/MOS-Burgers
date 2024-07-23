@@ -6,6 +6,7 @@
     <title>MOS Burgers-Admin</title>
     <link rel="icon" type="image/png" href="logo-photoaidcom-cropped.jpg">
     <link rel="stylesheet" href="HomepageStyles.css">
+    <script src="app.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -21,9 +22,9 @@
         </nav>
     </header>
 
-    <input type="button" id="printbtnOrder" class="printbtn" value="Print Details" onclick="window.print()">
+    <input type="button" id="printbtnOrder" class="printbtn" value="Print Details" onclick="printTable()">
 
-    <div class="table-container">
+    <div class="table-container" id="table-container">
         <table>
             <thead>
                     <tr>
