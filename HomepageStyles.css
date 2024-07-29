@@ -670,7 +670,7 @@ tr:hover {
   margin-top:0px;
   margin-bottom: 20px;
   margin-left: 1410px;
-  /* position: fixed; */
+ 
 }
 #upBtn{
   background-color: #dddddd;
@@ -678,6 +678,7 @@ tr:hover {
     border-radius: 10px;
     border: 0px solid #000000; 
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #addItem{
@@ -703,3 +704,31 @@ tr:hover {
     width: 180px;
 }
 
+/* Style the quantity select dropdown */
+.quantity-select {
+  padding: 3px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7e9b8;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Style the options within the select */
+.quantity-select option {
+  font-size: 16px;
+  padding: 5px;
+}
+
+/* Add hover effect to the dropdown */
+.quantity-select:hover {
+  border-color: #000000;
+}
+
+/* Add focus effect to the dropdown */
+.quantity-select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 5px rgb(0, 189, 157);
+}

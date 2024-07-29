@@ -6,6 +6,8 @@
     <title>MOS Burgers</title>
     <link rel="icon" type="image/png" href="logo-photoaidcom-cropped.jpg">
     <link rel="stylesheet" href="HomepageStyles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
     <script src="app.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -22,23 +24,24 @@
         </nav>
     </header>
 
-    <div>
-        <table class="orderttable" id="cartTable">
-            <thead>
-                <tr>
-                    <th>Item ID</th>
-                    <th>Item Name</th>
-                    <th>Unit Price</th>
-                    <th>Quantity</th>
-                    <th>Discount</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Table rows go here -->
-            </tbody>
-        </table>
-    </div>
+    <main>
+        <div>
+            <table class="orderttable" id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Item ID</th>
+                        <th>Item Name</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Discount</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
 
     <div class="mainCart">
         <div class="cartPage">
@@ -46,25 +49,25 @@
             <div class="mb-3 row">
                 <label for="NIC" class="col-sm-2 col-form-label">NIC</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="CusNIC">
+                    <input type="text" class="form-control" id="CusNIC" required>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="CusName" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="CusName">
+                    <input type="text" class="form-control" id="CusName" required>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="CusAddress" class="col-sm-2 col-form-label">Address</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="CusAddress">
+                    <input type="text" class="form-control" id="CusAddress" required>
                 </div>
             </div>
             <div class="mb-3 row">
                 <label for="CusContact" class="col-sm-2 col-form-label">Contact</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="CusContact">
+                    <input type="text" class="form-control" id="CusContact" required>
                 </div>
             </div>
         </div>
@@ -74,7 +77,7 @@
             <div class="mb-3 row">
                 <label for="SubTotal" class="col-sm-2 col-form-label">Sub Total</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-controll" id="SubTotal">
+                    <input type="text" class="form-controll" id="SubTotal" readonly>
                 </div>
             </div>
             <div class="mb-3 row">
@@ -99,11 +102,10 @@
     </div>
 
     <div class="orderbtns">
-        <input type="button" class="placeOrder" value="Place Order">
+        <input type="button" class="placeOrder" value="Place Order" onclick="validateAndPlaceOrder()">
+
         <input type="button" class="back" value="Back to Menu" onclick="location.href='menupage.html'">
     </div>
-
-
 
     <footer class="site-footer">
         <div class="container">
@@ -139,13 +141,29 @@
         <h8><center><b>Copyright &copy; 2024 All Rights Reserved. </b></center></h8>
     </footer>
 
-    
-    <script src="app.js"></script>
     <script>
         // Load cart data on page load
         document.addEventListener('DOMContentLoaded', (event) => {
             loadCartData();
         });
+
+        function validateAndPlaceOrder() {
+        // Get the values of the customer details fields
+        const nic = document.getElementById('CusNIC').value.trim();
+        const name = document.getElementById('CusName').value.trim();
+        const contact = document.getElementById('CusContact').value.trim();
+        const address = document.getElementById('CusAddress').value.trim();
+        
+        if (!nic || !name || !address || !contact) {
+            alert('Please provide Customer Details !');
+            return; 
+        }
+       
+
+        generatePDF();
+    }
+
+        
 
         function loadCartData() {
             const subTotal = localStorage.getItem('subTotal') || 0;
@@ -153,10 +171,65 @@
             const deliveryCharge = 300; // Fixed delivery charge
             const total = parseFloat(subTotal) - parseFloat(discount) + deliveryCharge;
 
-            document.getElementById('SubTotal').value = "+ Rs "+subTotal+"/=";
-            document.getElementById('Discount').value = " - Rs "+discount+"/=";
-            document.getElementById('Delivery').value = "+ Rs "+deliveryCharge+"/=";
-            document.getElementById('Total').value = "= Rs "+total+"/=";
+            document.getElementById('SubTotal').value = "+ Rs " + subTotal + "/=";
+            document.getElementById('Discount').value = " - Rs " + discount + "/=";
+            document.getElementById('Delivery').value = "+ Rs " + deliveryCharge + "/=";
+            document.getElementById('Total').value = "Rs " + total + "/=";
+        }
+
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const orderId = "OD" + new Date().getTime().toString().slice(-6); // Generate Order ID
+            const date = new Date().toLocaleDateString();
+            const time = new Date().toLocaleTimeString();
+
+            const subTotal = document.getElementById('SubTotal').value;
+            const discount = document.getElementById('Discount').value;
+            const delivery = document.getElementById('Delivery').value;
+            const total = document.getElementById('Total').value;
+
+            const nic = document.getElementById('CusNIC').value;
+            const name = document.getElementById('CusName').value;
+            const contact = document.getElementById('CusContact').value;
+            const address = document.getElementById('CusAddress').value;
+
+
+            // Add a title and some styling
+            doc.setFontSize(28);
+            doc.text("Order Details", 80, 19);
+
+
+            // Add order details
+            doc.setFontSize(12);
+            doc.text("Order ID : " + orderId, 13, 28);
+            doc.text("Date : " + date, 13, 38);
+            doc.text("Time : " + time, 13, 48);
+            doc.text("Sub Total : " + subTotal, 13, 58);
+            doc.text("Discount : " + discount, 13, 68);
+            doc.text("Delivery : " + delivery, 13, 78);
+            doc.text("Total : " + total, 13, 88);
+
+            // Add customer details
+            doc.text("Customer NIC : " + nic, 13, 98);
+            doc.text("Customer Name : " + name, 13, 108);
+            doc.text("Customer Contact : " + contact, 13, 118);
+            doc.text("Customer Address : " + address, 13, 128);
+            
+
+            // Add some design elements like borders
+            doc.setLineWidth(0.2);
+            doc.rect(5, 5, 200, 130); // Main border
+            doc.rect(7, 7, 196, 126); // Inner border
+
+            // Optionally add a logo
+            const img = new Image();
+            img.src = '_77e95e81-c282-4e1d-9649-e2d53c3df77a.jpeg';
+            img.onload = function () {
+                doc.addImage(img, 'JPEG', 110, 29, 80, 80);
+                doc.save("Order_Details.pdf");
+            };
         }
     </script>
 </body>

@@ -1,87 +1,84 @@
 let subTotal = 0;
 let totalDiscount = 0;
 let deliveryCharge = 300;
+let itemCounter = 1001; // Initialize with a number
 
+// Function to add an item to the cart and update the table
 function itemAdded(button, itemName, itemPrice, discount, qty) {
+    console.log('Item Added Function Called');
     console.log("Item added:", itemName, itemPrice, discount, qty); // Debugging line
+
+    // Validate input values
+    if (itemName === undefined || itemPrice === undefined || discount === undefined || qty === undefined) {
+        console.error('Invalid input values');
+        return;
+    }
+
+    // Calculate totals
     const discountForItem = itemPrice * (discount / 100) * qty;
     subTotal += itemPrice * qty;
     totalDiscount += discountForItem;
 
+    // Update button state
     button.innerHTML = "Item Added";
     button.style = "color: #000000; background-color: #e8e1c4; border: 0px solid #000000;";
-    
+
     // Update local storage
     updateLocalStorage(subTotal, totalDiscount);
 
-    // Update cart table (if present)
-    updateCartTable(itemName, itemPrice, discount, qty);
+    // Generate a unique item ID
+    let itemID = itemCounter++;
+
+    // Update the cart table
+    updateCartTable(itemID, itemName, itemPrice, discount, qty);
+    updateCheckoutDiv(); // Update checkout details
 }
 
+// Function to update local storage
 function updateLocalStorage(subTotal, totalDiscount) {
     localStorage.setItem('subTotal', subTotal);
     localStorage.setItem('discount', totalDiscount);
 }
 
-function updateCartTable(itemName, itemPrice, discount, qty) {
-    // Function to update cart table on MenuPage.html (if required)
-    // This function can be enhanced to add items to a visual cart table
+// Function to update the cart table
+function updateCartTable(itemID, itemName, itemPrice, discount, qty) {
+    console.log('Updating Cart Table');
+
+    const tableBody = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+    if (!tableBody) {
+        console.error('Table body not found');
+        return;
+    }
+
+    // Create a new row
+    const newRow = tableBody.insertRow();
+
+    // Insert cells into the new row
+    const cell1 = newRow.insertCell(0); // Item ID
+    const cell2 = newRow.insertCell(1); // Item Name
+    const cell3 = newRow.insertCell(2); // Unit Price
+    const cell4 = newRow.insertCell(3); // Quantity
+    const cell5 = newRow.insertCell(4); // Discount
+    const cell6 = newRow.insertCell(5); // Total
+
+    // Populate cells with data
+    cell1.textContent = itemID;
+    cell2.textContent = itemName;
+    cell3.textContent = `LKR ${itemPrice}`;
+    cell4.textContent = qty;
+    cell5.textContent = `${discount}%`;
+
+    // Calculate and display the total price
+    const total = itemPrice * qty * (1 - discount / 100);
+    cell6.textContent = `LKR ${total.toFixed(2)}`;
 }
 
+// Function to update the checkout details
 function updateCheckoutDiv() {
-    // Function to update checkout summary on Cart.html
     const total = subTotal - totalDiscount + deliveryCharge;
 
-    document.getElementById('SubTotal').value = subTotal.toFixed(2);
-    document.getElementById('Discount').value = totalDiscount.toFixed(2);
-    document.getElementById('Delivery').value = deliveryCharge.toFixed(2);
-    document.getElementById('Total').value = total.toFixed(2);
+    document.getElementById('SubTotal').value = `LKR ${subTotal.toFixed(2)}`;
+    document.getElementById('Discount').value = `LKR ${totalDiscount.toFixed(2)}`;
+    document.getElementById('Delivery').value = `LKR ${deliveryCharge.toFixed(2)}`;
+    document.getElementById('Total').value = `LKR ${total.toFixed(2)}`;
 }
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     function itemAdded(button, itmName, itmPrice, dis, qty) {
-//         button.innerHTML = "Item Added";
-//         button.style = "color: #000000; background-color: #e8e1c4; border: 0px solid #000000;";
-//         let name = itmName;
-//         let price = itmPrice;
-//         let discount = dis;
-//         let quan = qty;
-//         updateCartTable(name, price, discount, quan);
-//     }
-
-//     function updateCartTable(name, price, discount, quan) {
-//         console.log("Updating cart table with:", name, price, discount, quan);
-//         var table = document.getElementById("cartTable").getElementsByTagName('tbody')[0];
-//         if (!table) {
-//             console.error("Tbody element not found");
-//             return;
-//         }
-//         var row = table.insertRow();
-
-//         var cell1 = row.insertCell(0); // Item ID
-//         var cell2 = row.insertCell(1); // Product Name
-//         var cell3 = row.insertCell(2); // Unit Price
-//         var cell4 = row.insertCell(3); // Quantity
-//         var cell5 = row.insertCell(4); // Discount
-//         var cell6 = row.insertCell(5); // Total
-
-//         var discountedPrice = price - (price * discount / 100);
-//         var total = discountedPrice * quan;
-
-//         cell1.textContent = table.rows.length;
-//         cell2.textContent = name;
-//         cell3.textContent = 'LKR ' + price + '/-';
-//         cell4.textContent = quan;
-//         cell5.textContent = discount + '%';
-//         cell6.textContent = 'LKR ' + total + '/-';
-//     }
-
-//     // Example of adding item via button click for testing
-//     document.getElementById("addItemButton").addEventListener("click", function() {
-//         itemAdded(this, "Burger", 500, 10, 2);
-//     });
-// });
-
-
