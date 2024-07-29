@@ -74,7 +74,7 @@
             <div class="mb-3 row">
                 <label for="SubTotal" class="col-sm-2 col-form-label">Sub Total</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-controll" id="SubTotal" readonly>
+                    <input type="text" class="form-controll" id="SubTotal">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -102,6 +102,8 @@
         <input type="button" class="placeOrder" value="Place Order">
         <input type="button" class="back" value="Back to Menu" onclick="location.href='menupage.html'">
     </div>
+
+
 
     <footer class="site-footer">
         <div class="container">
@@ -136,5 +138,26 @@
 
         <h8><center><b>Copyright &copy; 2024 All Rights Reserved. </b></center></h8>
     </footer>
+
+    
+    <script src="app.js"></script>
+    <script>
+        // Load cart data on page load
+        document.addEventListener('DOMContentLoaded', (event) => {
+            loadCartData();
+        });
+
+        function loadCartData() {
+            const subTotal = localStorage.getItem('subTotal') || 0;
+            const discount = localStorage.getItem('discount') || 0;
+            const deliveryCharge = 300; // Fixed delivery charge
+            const total = parseFloat(subTotal) - parseFloat(discount) + deliveryCharge;
+
+            document.getElementById('SubTotal').value = "+ Rs "+subTotal+"/=";
+            document.getElementById('Discount').value = " - Rs "+discount+"/=";
+            document.getElementById('Delivery').value = "+ Rs "+deliveryCharge+"/=";
+            document.getElementById('Total').value = "= Rs "+total+"/=";
+        }
+    </script>
 </body>
 </html>
