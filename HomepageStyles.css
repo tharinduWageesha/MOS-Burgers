@@ -732,3 +732,196 @@ tr:hover {
   border-color: #000000;
   box-shadow: 0 0 5px rgb(0, 189, 157);
 }
+
+
+/* Mobile Styles */
+@media (max-width: 991px) {
+  .topnav {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .topnav .logo {
+    height: 60px;
+    width: 80px;
+  }
+
+  .topnav .tagline {
+    font-size: 22px;
+    margin-left: 15px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px 12px;
+  }
+
+  #logBtn, #addcart, #viewCart {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  #logBtn:hover, #addcart:hover, #viewCart:hover {
+    font-size: 16px;
+  }
+
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .banner-img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .bannertext {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .bannertitle {
+    font-size: 60px;
+  }
+
+  .bannersub {
+    font-size: 24px;
+  }
+
+  .bannerbtn {
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .hotDeals {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .hotDealsTitle {
+    font-size: 30px;
+    padding-left: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .item-card {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .product-title, .product-price {
+    font-size: 18px;
+  }
+
+  .add-to-cart-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  #offerimg {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .searchBar {
+    margin-left: 0;
+  }
+
+  #searchBar {
+    width: calc(100% - 80px);
+    font-size: 0.9em;
+  }
+
+  #searchBtn {
+    padding: 8px 16px;
+  }
+
+  table {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .site-footer {
+    font-size: 13px;
+    padding: 10px 0;
+  }
+
+  .site-footer h6 {
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .mainCart, .cartPage, .orderdetailsPage {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .cartPage, .orderdetailsPage {
+    padding: 20px;
+  }
+
+  .form-controll {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .placeOrder, .back, .printbtn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  .loginAdmin {
+    font-size: 30px;
+    margin-left: 0;
+  }
+
+  .loginSec {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .mb-3 {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .logbtns {
+    margin-left: 0;
+  }
+
+  .remBtn, .addNewbtn1, .addNewbtn2, .addNewbtn3, .addNewbtn4, .addNewbtn5, .addNewbtn6, .addNewbtn7, .addNewbtn8 {
+    font-size: 16px;
+    padding: 8px 16px;
+    margin-left: 0;
+  }
+
+  #upBtn {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+
+  #addItem, #addItemtext, #categoryinAddNew {
+    margin-left: 0;
+  }
+
+  .quantity-select {
+    width: 100%;
+    padding: 8px;
+  }
+}
+
+
+

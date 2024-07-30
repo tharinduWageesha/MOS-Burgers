@@ -56,10 +56,31 @@ function clearOrder() {
     }
 }
 
+// printTable in adminreports------------------
+function printTable() {
+    var divToPrint = document.getElementById("table-container");
+    var newWin = window.open("");
+    newWin.document.write('<html><head><title>Print Table</title>');
+    newWin.document.write('<style>');
+    newWin.document.write('body * { visibility: hidden; }');
+    newWin.document.write('.table-container, .table-container * { visibility: visible; }');
+    newWin.document.write('.table-container { position: absolute; top: 0; left: 0; width: 100%; }');
+    newWin.document.write('table { width: 100%; border-collapse: collapse; }');
+    newWin.document.write('th, td { border: 1px solid black; padding: 8px; text-align: left; }');
+    newWin.document.write('th { background-color: #f2f2f2; }');
+    newWin.document.write('</style>');
+    newWin.document.write('</head><body>');
+    newWin.document.write(divToPrint.outerHTML);
+    newWin.document.write('</body></html>');
+    newWin.document.close();
+    newWin.print();
+    newWin.close();
+}
+
+
 
 
 function addToCart(itemName, itemPrice, discount, qty) {
-    console.log('Caddddddddd updated:', subTotal, totalDiscount, itemCounter);
         // Create an item object
         const item = {
             id: Date.now(), // Unique ID for the item

@@ -416,5 +416,22 @@
         
         <h8><center><b>Copyright &copy; 2024 All Rights Reserved. </b></center></h8>
   </footer>
+
+
+
+
+
+  <script>
+    // Add event listener to all remove buttons
+    document.querySelectorAll('.remBtn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Ask the user for confirmation
+            if (confirm('Do you want to permanently delete this item?')) {
+                // Remove the parent .item-card div
+                this.parentElement.remove();
+            }
+        });
+    });
+</script>
 </body>
 </html>
