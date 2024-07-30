@@ -104,7 +104,8 @@
     <div class="orderbtns">
         <input type="button" class="placeOrder" value="Place Order" onclick="validateAndPlaceOrder()">
 
-        <input type="button" class="back" value="Back to Menu" onclick="location.href='menupage.html'">
+        <input type="button" class="back" value="Clear Order" onclick="clearOrder()">
+
     </div>
 
     <footer class="site-footer">
@@ -165,10 +166,10 @@
     const total = subTotal - discount + deliveryCharge;
 
     // Update order details fields
-    document.getElementById('SubTotal').value = "+ Rs " + subTotal.toFixed(2) + "/=";
-    document.getElementById('Discount').value = " - Rs " + discount.toFixed(2) + "/=";
-    document.getElementById('Delivery').value = "+ Rs " + deliveryCharge + "/=";
-    document.getElementById('Total').value = "Rs " + total.toFixed(2) + "/=";
+    document.getElementById('SubTotal').value = "+ Rs " + subTotal.toFixed(2);
+    document.getElementById('Discount').value = " - Rs " + discount.toFixed(2) ;
+    document.getElementById('Delivery').value = "+ Rs " + deliveryCharge+"/=";
+    document.getElementById('Total').value = "Rs " + total.toFixed(2);
 }
 
     function updateCartTable(itemID, itemName, itemPrice, discount, qty) {
@@ -205,7 +206,7 @@
     }
 
     function validateAndPlaceOrder() {
-        // Get the values of the customer details fields
+
         const nic = document.getElementById('CusNIC').value.trim();
         const name = document.getElementById('CusName').value.trim();
         const contact = document.getElementById('CusContact').value.trim();
@@ -216,7 +217,7 @@
             return; 
         }
        
-
+        alert('Order Placed Successfully ! Recipt will be downloading shortly...');
         generatePDF();
     }
 

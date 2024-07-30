@@ -498,8 +498,8 @@ tr:hover {
     font-size: 18px;
 }
 .back{
-  background-color: #ffffff;
-    color: #000000;
+  background-color: #ff0000;
+    color: #ffffff;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #000000; 
@@ -514,7 +514,7 @@ tr:hover {
   cursor: pointer;
 }
 .back:hover {
-  background-color: #e1e0e0;
+  background-color: #f18282;
   color: #000000;
   border-radius: 10px;
   border: 1px solid #e1e0e0; 

@@ -25,6 +25,38 @@ function itemAdded(button, itemName, itemPrice, discount, qty) {
     addToCart(itemName, itemPrice, discount, qty);
 }
 
+function clearOrder() {
+
+    const userConfirmed = confirm('Do you want to permanently delete this order?');
+    
+   
+    if (userConfirmed) {
+
+        const tableBody = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+        if (tableBody) {
+            tableBody.innerHTML = '';
+        }
+
+        // Reset order details
+        document.getElementById('SubTotal').value = "+ Rs 0.00/=";
+        document.getElementById('Discount').value = " - Rs 0.00/=";
+        document.getElementById('Delivery').value = "+ Rs 0.00/=";
+        document.getElementById('Total').value = "Rs 0.00/=";
+
+        // Clear local storage
+        localStorage.removeItem('cartItems');
+        localStorage.removeItem('subTotal');
+        localStorage.removeItem('discount');
+
+        // Optionally, reset customer details
+        document.getElementById('CusNIC').value = '';
+        document.getElementById('CusName').value = '';
+        document.getElementById('CusContact').value = '';
+        document.getElementById('CusAddress').value = '';
+    }
+}
+
+
 
 function addToCart(itemName, itemPrice, discount, qty) {
     console.log('Caddddddddd updated:', subTotal, totalDiscount, itemCounter);
