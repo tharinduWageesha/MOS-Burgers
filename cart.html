@@ -142,12 +142,69 @@
     </footer>
 
     <script>
-        // Load cart data on page load
-        document.addEventListener('DOMContentLoaded', (event) => {
-            loadCartData();
-        });
+         document.addEventListener('DOMContentLoaded', (event) => {
+        loadCartData();
+    });
 
-        function validateAndPlaceOrder() {
+    function loadCartData() {
+    const deliveryCharge = 300; // Fixed delivery charge
+    let subTotal = 0;
+    let discount = 0;
+    
+    // Load cart items from local storage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Update the cart table with the items and calculate total values
+    cartItems.forEach(item => {
+        const itemTotal = item.price * item.quantity * (1 - item.discount / 100);
+        subTotal += item.price * item.quantity;
+        discount += item.price * item.quantity * (item.discount / 100);
+        updateCartTable(item.id, item.name, item.price, item.discount, item.quantity);
+    });
+
+    const total = subTotal - discount + deliveryCharge;
+
+    // Update order details fields
+    document.getElementById('SubTotal').value = "+ Rs " + subTotal.toFixed(2) + "/=";
+    document.getElementById('Discount').value = " - Rs " + discount.toFixed(2) + "/=";
+    document.getElementById('Delivery').value = "+ Rs " + deliveryCharge + "/=";
+    document.getElementById('Total').value = "Rs " + total.toFixed(2) + "/=";
+}
+
+    function updateCartTable(itemID, itemName, itemPrice, discount, qty) {
+        console.log('Updating Cart Table');
+
+        const tableBody = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
+        if (!tableBody) {
+            console.error('Table body not found');
+            return;
+        }
+
+        // Create a new row
+        const newRow = tableBody.insertRow();
+
+        // Insert cells into the new row
+        const cell1 = newRow.insertCell(0); // Item ID
+        const cell2 = newRow.insertCell(1); // Item Name
+        const cell3 = newRow.insertCell(2); // Unit Price
+        const cell4 = newRow.insertCell(3); // Quantity
+        const cell5 = newRow.insertCell(4); // Discount
+        const cell6 = newRow.insertCell(5); // Total
+
+        // Populate cells with data
+        cell1.textContent = itemID;
+        cell2.textContent = itemName;
+        cell3.textContent = `LKR ${itemPrice}`;
+        cell4.textContent = qty;
+        cell5.textContent = `${discount}%`;
+
+        // Calculate and display the total price
+        const total = itemPrice * qty * (1 - discount / 100);
+        cell6.textContent = `LKR ${total.toFixed(2)}`;
+        
+    }
+
+    function validateAndPlaceOrder() {
         // Get the values of the customer details fields
         const nic = document.getElementById('CusNIC').value.trim();
         const name = document.getElementById('CusName').value.trim();
@@ -165,17 +222,7 @@
 
         
 
-        function loadCartData() {
-            const subTotal = localStorage.getItem('subTotal') || 0;
-            const discount = localStorage.getItem('discount') || 0;
-            const deliveryCharge = 300; // Fixed delivery charge
-            const total = parseFloat(subTotal) - parseFloat(discount) + deliveryCharge;
-
-            document.getElementById('SubTotal').value = "+ Rs " + subTotal + "/=";
-            document.getElementById('Discount').value = " - Rs " + discount + "/=";
-            document.getElementById('Delivery').value = "+ Rs " + deliveryCharge + "/=";
-            document.getElementById('Total').value = "Rs " + total + "/=";
-        }
+        
 
         function generatePDF() {
             const { jsPDF } = window.jspdf;
@@ -225,12 +272,13 @@
 
             // Optionally add a logo
             const img = new Image();
-            img.src = '_77e95e81-c282-4e1d-9649-e2d53c3df77a.jpeg';
+            img.src = 'thankyoucard.jpg';
             img.onload = function () {
                 doc.addImage(img, 'JPEG', 110, 29, 80, 80);
                 doc.save("Order_Details.pdf");
             };
         }
+
     </script>
 </body>
 </html>
