@@ -1,0 +1,3 @@
+[submodule "MOS-Burgers"]
+    path = MOS-Burgers
+    url = https://github.com/tharinduWageesha/MOS-Burgers.git
